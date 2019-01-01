@@ -1,0 +1,27 @@
+---
+# tasks file for ansible
+- name: test veriables and environment
+  assert:
+    that:
+      - ansible_package_state is defined
+      - ansible_package_state == "present" or
+        ansible_package_state == "latest" or
+        ansible_package_state == "absent"
+
+- name: install ansible
+  package:
+    name: "{{ ansible_packages }}"
+    state: "{{ ansible_package_state }}"
+  register: ansible_install_ansible
+  until: ansible_install_ansible is succeeded
+  retries: 3
+
+- name: ensure the ansible_config_directory exists
+  file:
+    path: "{{ ansible_config_directory }}"
+    state: directory
+
+- name: configure ansible
+  template:
+    src: "{{ ansible_config_file }}.j2"
+    dest: "{{ ansible_config_directory }}/{{ ansible_config_file }}"

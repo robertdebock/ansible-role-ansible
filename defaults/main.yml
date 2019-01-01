@@ -1,0 +1,5 @@
+---
+# defaults file for ansible
+
+# To update packages this role places on the system, set `ansible_package_state` to `latest`.
+ansible_package_state: present
