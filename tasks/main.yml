@@ -15,13 +15,3 @@
   register: ansible_install_ansible
   until: ansible_install_ansible is succeeded
   retries: 3
-
-- name: ensure the ansible_config_directory exists
-  file:
-    path: "{{ ansible_config_directory }}"
-    state: directory
-
-- name: configure ansible
-  template:
-    src: "{{ ansible_config_file }}.j2"
-    dest: "{{ ansible_config_directory }}/{{ ansible_config_file }}"
