@@ -1,5 +1,12 @@
 ---
 # defaults file for ansible
 
+ansible_roles_path: roles
+ansible_retry_files_enabled: no
+ansible_inventory: inventory
+ansible_stdout_callback: yaml
+ansible_callback_whitelist:
+  - profile_roles
+
 # To update packages this role places on the system, set `ansible_package_state` to `latest`.
 ansible_package_state: present

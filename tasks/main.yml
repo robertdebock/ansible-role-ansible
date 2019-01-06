@@ -15,3 +15,9 @@
   register: ansible_install_ansible
   until: ansible_install_ansible is succeeded
   retries: 3
+
+- name: configure ansible
+  template:
+    src: ansible.cfg.j2
+    dest: /etc/ansible/ansible.cfg
+    validate: ANSIBLE_CONFIG=%s ansible --module-name ping --inventory localhost, --check
