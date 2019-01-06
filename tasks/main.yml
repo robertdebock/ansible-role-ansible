@@ -25,4 +25,3 @@
   template:
     src: ansible.cfg.j2
     dest: /etc/ansible/ansible.cfg
-    validate: ANSIBLE_CONFIG=%s ansible --module-name ping --inventory localhost, --check
