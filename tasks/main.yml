@@ -16,6 +16,11 @@
   until: ansible_install_ansible is succeeded
   retries: 3
 
+- name: ensure the ansible directory exists
+  file:
+    path: /etc/ansible
+    state: directory
+
 - name: configure ansible
   template:
     src: ansible.cfg.j2
