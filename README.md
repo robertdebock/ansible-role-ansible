@@ -23,6 +23,8 @@ This example is taken from `molecule/default/playbook.yml`:
 
 ```
 
+Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
+
 Role Variables
 --------------
 
@@ -30,6 +32,13 @@ These variables are set in `defaults/main.yml`:
 ```yaml
 ---
 # defaults file for ansible
+
+ansible_roles_path: roles
+ansible_retry_files_enabled: no
+ansible_inventory: inventory
+ansible_stdout_callback: yaml
+ansible_callback_whitelist:
+  - profile_roles
 
 # To update packages this role places on the system, set `ansible_package_state` to `latest`.
 ansible_package_state: present
