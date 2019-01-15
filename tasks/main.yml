@@ -25,7 +25,7 @@
   lineinfile:
     path: "{{ ansible_configuration_directory }}/{{ ansible_configuration_file }}"
     insertbefore: BOF
-    line: "{{ ansible_managed | comment }}"
+    line: "# This file is managed by Ansible."
 
 - name: configure ansible
   ini_file:
