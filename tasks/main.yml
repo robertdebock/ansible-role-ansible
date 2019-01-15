@@ -21,7 +21,17 @@
     path: /etc/ansible
     state: directory
 
+- name: mark configuration file as ansible managed
+  lineinfile:
+    path: "{{ ansible_configuration_directory }}/{{ ansible_configuration_file }}"
+    insertbefore: BOF
+    line: "{{ ansible_managed | comment }}"
+
 - name: configure ansible
-  template:
-    src: ansible.cfg.j2
-    dest: /etc/ansible/ansible.cfg
+  ini_file:
+    path: "{{ ansible_configuration_directory }}/{{ ansible_configuration_file }}"
+    section: "{{ item.section }}"
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+  with_items:
+    - ansible_configuration

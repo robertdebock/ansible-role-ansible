@@ -33,12 +33,22 @@ These variables are set in `defaults/main.yml`:
 ---
 # defaults file for ansible
 
-ansible_roles_path: roles
-ansible_retry_files_enabled: no
-ansible_inventory: inventory
-ansible_stdout_callback: yaml
-ansible_callback_whitelist:
-  - profile_roles
+ansible_configuration:
+  - option: roles_path
+    section: defaults
+    value: roles
+  - option: retry_files_enabled
+    section: defaults
+    value: no
+  - option: inventory
+    section: defaults
+    value: inventory
+  - option: stdout_callback:
+    section: defaults
+    value: yaml
+  - option: callback_whitelist
+    section: defaults
+    value: profile_roles
 
 # To update packages this role places on the system, set `ansible_package_state` to `latest`.
 ansible_package_state: present
