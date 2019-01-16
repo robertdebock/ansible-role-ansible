@@ -30,8 +30,8 @@
 - name: configure ansible
   ini_file:
     path: "{{ ansible_configuration_directory }}/{{ ansible_configuration_file }}"
-    section: "{{ item.section }}"
+    section: "{{ item.section | default('defaults') }}"
     option: "{{ item.option }}"
     value: "{{ item.value }}"
   with_items:
-    - ansible_configuration
+    - "{{ ansible_configuration }}"
