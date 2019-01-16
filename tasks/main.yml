@@ -21,14 +21,10 @@
     path: /etc/ansible
     state: directory
 
-- name: ensure /etc/ansible/ansible.cfg exists
-  file:
-    path: /etc/ansible/ansible.cfg
-    state: file
-
 - name: mark configuration file as ansible managed
   lineinfile:
     path: "{{ ansible_configuration_directory }}/{{ ansible_configuration_file }}"
+    create: yes
     insertbefore: BOF
     line: "# This file is managed by Ansible."
 
