@@ -24,7 +24,7 @@
 - name: ensure /etc/ansible/ansible.cfg exists
   file:
     path: /etc/ansible/ansible.cfg
-    state: touch
+    state: file
 
 - name: mark configuration file as ansible managed
   lineinfile:
