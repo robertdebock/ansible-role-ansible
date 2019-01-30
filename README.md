@@ -35,19 +35,14 @@ These variables are set in `defaults/main.yml`:
 
 ansible_configuration:
   - option: roles_path
-    section: defaults
     value: roles
   - option: retry_files_enabled
-    section: defaults
     value: no
   - option: inventory
-    section: defaults
     value: inventory
-  - option: stdout_callback:
-    section: defaults
+  - option: stdout_callback
     value: yaml
   - option: callback_whitelist
-    section: defaults
     value: profile_roles
 
 # To update packages this role places on the system, set `ansible_package_state` to `latest`.
