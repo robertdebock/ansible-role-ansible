@@ -34,8 +34,10 @@ platforms:
     image: opensuse:leap
   - name: ansible-opensuse-tumbleweed
     image: opensuse:tumbleweed
-  - name: ansible-ubuntu-artful
-    image: ubuntu:artful
+  - name: ansible-ubuntu-latest
+    image: ubuntu:latest
+  - name: ansible-ubuntu-rolling
+    image: ubuntu:rolling
   - name: ansible-ubuntu-devel
     image: ubuntu:devel
 provisioner:
