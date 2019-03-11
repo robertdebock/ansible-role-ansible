@@ -11,7 +11,7 @@
 - name: install ansible
   package:
     name: "{{ ansible_packages }}"
-    state: "{{ ansible_package_state }}"
+    state: present
   register: ansible_install_ansible
   until: ansible_install_ansible is succeeded
   retries: 3
