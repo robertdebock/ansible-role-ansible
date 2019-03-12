@@ -3,10 +3,6 @@
 - name: test veriables and environment
   assert:
     that:
-      - ansible_package_state is defined
-      - ansible_package_state == "present" or
-        ansible_package_state == "latest" or
-        ansible_package_state == "absent"
 
 - name: install ansible
   package:
