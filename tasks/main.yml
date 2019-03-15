@@ -1,9 +1,5 @@
 ---
 # tasks file for ansible
-- name: test veriables and environment
-  assert:
-    that:
-
 - name: install ansible
   package:
     name: "{{ ansible_packages }}"
