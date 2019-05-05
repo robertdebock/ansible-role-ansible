@@ -28,3 +28,5 @@
     value: "{{ item.value }}"
   with_items:
     - "{{ ansible_configuration }}"
+  loop_control:
+    label: "{{ item.option }}"
