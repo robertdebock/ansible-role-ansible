@@ -50,7 +50,6 @@ After running this role, this playbook runs to verify that everything works, thi
       args:
         creates: ansible.version
 ```
-```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
 
