@@ -4,6 +4,8 @@ ansible
 <img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/>
 <a href="https://travis-ci.org/robertdebock/ansible-role-ansible"> <img src="https://travis-ci.org/robertdebock/ansible-role-ansible.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/35944"/> <img src="https://img.shields.io/ansible/quality/35944"/>
 
+<a href="https://github.com/robertdebock/ansible-role-ansible/actions"><img src="https://github.com/robertdebock/ansible-role-ansible/workflows/GitHub%20Action/badge.svg"/></a>
+
 Install and configure ansible on your system.
 
 Example Playbook
@@ -65,7 +67,7 @@ ansible_configuration:
   - option: roles_path
     value: roles
   - option: retry_files_enabled
-    value: no
+    value: "no"
   - option: inventory
     value: inventory
   - option: stdout_callback
