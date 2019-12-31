@@ -5,7 +5,7 @@ ansible_configuration:
   - option: roles_path
     value: roles
   - option: retry_files_enabled
-    value: no
+    value: "no"
   - option: inventory
     value: inventory
   - option: stdout_callback
