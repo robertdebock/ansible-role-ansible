@@ -36,7 +36,6 @@
     section: "{{ item.section | default('defaults') }}"
     option: "{{ item.option }}"
     value: "{{ item.value }}"
-  with_items:
-    - "{{ ansible_configuration }}"
+  loop: "{{ ansible_configuration }}"
   loop_control:
     label: "{{ item.option }}"
