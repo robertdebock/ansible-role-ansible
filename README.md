@@ -2,9 +2,9 @@
 
 Install and configure ansible on your system.
 
-|Travis|GitHub|Quality|Downloads|
-|------|------|-------|---------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-ansible.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-ansible)|[![github](https://github.com/robertdebock/ansible-role-ansible/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-ansible/actions)|[![quality](https://img.shields.io/ansible/quality/35944)](https://galaxy.ansible.com/robertdebock/ansible)|[![downloads](https://img.shields.io/ansible/role/d/35944)](https://galaxy.ansible.com/robertdebock/ansible)|
+|Travis|GitHub|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-ansible.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-ansible)|[![github](https://github.com/robertdebock/ansible-role-ansible/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-ansible/actions)|[![quality](https://img.shields.io/ansible/quality/35944)](https://galaxy.ansible.com/robertdebock/ansible)|[![downloads](https://img.shields.io/ansible/role/d/35944)](https://galaxy.ansible.com/robertdebock/ansible)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-ansible.svg)](https://github.com/robertdebock/ansible-role-ansible/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -82,8 +82,8 @@ The following roles can be installed to ensure all requirements are met, using `
 ```yaml
 ---
 - robertdebock.bootstrap
-- robertdebock.epel
 - robertdebock.buildtools
+- robertdebock.epel
 - robertdebock.python_pip
 
 ```
