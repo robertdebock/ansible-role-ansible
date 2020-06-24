@@ -1,6 +1,5 @@
 ---
 # defaults file for ansible
-
 ansible_configuration:
   - option: roles_path
     value: roles

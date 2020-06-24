@@ -58,7 +58,6 @@ These variables are set in `defaults/main.yml`:
 ```yaml
 ---
 # defaults file for ansible
-
 ansible_configuration:
   - option: roles_path
     value: roles
