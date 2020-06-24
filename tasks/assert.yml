@@ -1,0 +1,19 @@
+---
+- name: test if ansible_configuration is set correctly
+  assert:
+    that:
+      - ansible_configuration | length > 0
+      - ansible_configuration is iterable
+  when:
+    - ansible_configuration is defined
+
+- name: test if item in ansible_configuration is set correctly
+  assert:
+    that:
+      - item.option is defined
+      - item.option | length > 0
+      - item.value is defined
+      - item.value | length > 0
+  loop: "{{ ansible_configuration }}"
+  when:
+    - ansible_configuration is defined
