@@ -14,6 +14,7 @@
       - item.option | length > 0
       - item.value is defined
       - item.value | length > 0
+    quiet: yes
   loop: "{{ ansible_configuration }}"
   when:
     - ansible_configuration is defined
