@@ -16,5 +16,7 @@
       - item.value | length > 0
     quiet: yes
   loop: "{{ ansible_configuration }}"
+  loop_control:
+    label: "{{ item.option }}"
   when:
     - ansible_configuration is defined
