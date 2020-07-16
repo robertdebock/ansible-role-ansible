@@ -9,17 +9,11 @@
       package:
         name: "{{ ansible_packages }}"
         state: present
-      register: ansible_install_ansible_package
-      until: ansible_install_ansible_package is succeeded
-      retries: 3
   rescue:
     - name: install ansible pip
       pip:
         name: ansible
         state: present
-      register: ansible_install_ansible_pip
-      until: ansible_install_ansible_pip is succeeded
-      retries: 3
 
 - name: ensure the ansible directory exists
   file:
