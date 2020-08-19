@@ -4,6 +4,7 @@
     that:
       - ansible_configuration | length > 0
       - ansible_configuration is iterable
+    quiet: yes
   when:
     - ansible_configuration is defined
 
