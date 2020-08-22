@@ -17,8 +17,9 @@
 
 - name: ensure the ansible directory exists
   file:
-    path: /etc/ansible
+    path: "{{ ansible_configuration_directory }}"
     state: directory
+    mode: "0755"
 
 - name: mark configuration file as ansible managed
   lineinfile:
@@ -26,6 +27,7 @@
     create: yes
     insertbefore: BOF
     line: "# This file is managed by Ansible."
+    mode: "0644"
 
 - name: configure ansible
   ini_file:
@@ -33,6 +35,7 @@
     section: "{{ item.section | default('defaults') }}"
     option: "{{ item.option }}"
     value: "{{ item.value }}"
+    mode: "0644"
   loop: "{{ ansible_configuration }}"
   loop_control:
     label: "{{ item.option }}"
