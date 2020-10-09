@@ -2,6 +2,7 @@
 # tasks file for ansible
 - name: include assert.yml
   include_tasks: assert.yml
+  run_once: yes
 
 - name: install ansible
   block:
