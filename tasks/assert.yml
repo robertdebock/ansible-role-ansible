@@ -1,7 +1,7 @@
 ---
 
 - name: test if ansible_configuration is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - ansible_configuration is iterable
     quiet: yes
@@ -9,7 +9,7 @@
     - ansible_configuration is defined
 
 - name: test if item in ansible_configuration is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - item.option is defined
       - item.option is string
