@@ -9,12 +9,12 @@
 - name: install ansible
   block:
     - name: install ansible package (allowed to fail)
-      package:
+      ansible.builtin.package:
         name: "{{ ansible_packages }}"
         state: present
   rescue:
     - name: install ansible pip
-      pip:
+      ansible.builtin.pip:
         name: ansible
         state: present
 
