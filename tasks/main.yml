@@ -13,7 +13,6 @@
         name: "{{ ansible_packages }}"
         state: present
   rescue:
-
     - name: install ansible pip
       ansible.builtin.pip:
         name: ansible
