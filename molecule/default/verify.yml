@@ -5,7 +5,7 @@
   gather_facts: no
 
   tasks:
-    - name: run ansible
+    - name: Run ansible
       ansible.builtin.shell:
         cmd: ansible --version > ansible.version
       args:
