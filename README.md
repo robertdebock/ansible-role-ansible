@@ -1,4 +1,4 @@
-# Ansible role [ansible](#ansible)
+# [Ansible role ansible](#ansible)
 
 Install and configure ansible on your system.
 
